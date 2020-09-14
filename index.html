@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Bane</title>
+    </head>
+
+    <body>
+
+    	<style>
+    		
+    		body {
+    			background-color: black;
+    		}
+
+    		img {
+				display: block;
+            	margin: auto;
+            }
+
+            img:hover {
+            	cursor: pointer;
+            }
+
+            button:hover {
+            	cursor: pointer;
+            }
+
+            
+            button {
+				background-color: black;
+            	color: white;
+            	border: 1px solid red;
+            	font-size: 15px;
+            	font-weight: bold;
+            }
+
+            .grid {
+			  display: grid;
+			  grid-template-columns: repeat(8, 50px);
+			  grid-gap: 10px;
+			  padding: 10px;
+			  justify-content: center;
+			}
+
+		</style>
+
+
+    	<img id="imageBane" onclick="playRandomAudio()" src="bane.png" width="400px" alt="Image of Bane">
+
+		<audio id="bane">
+		  <source src="" type="audio/mpeg">
+		</audio>
+		
+		<div class="grid">
+
+			<button onclick="playAudio('plan.mp3')" type="button">1</button>
+
+			<button onclick="playAudio('whySomeone.mp3')" type="button">2</button>
+
+			<button onclick="playAudio('mask.mp3')" type="button">3</button>
+
+			<button onclick="playAudio('painful.mp3')" type="button">4</button>
+
+			<button onclick="playAudio('ofCourse.mp3')" type="button">5</button>
+
+			<button onclick="playAudio('forYou.mp3')" type="button">6</button>
+
+			<button onclick="playAudio('lovelyVoice.mp3')" type="button">7</button>
+
+			<button onclick="playAudio('fireRises.mp3')" type="button">8</button>
+
+			<button onclick="playAudio('calm.mp3')" type="button">9</button>
+
+			<button onclick="playAudio('shadows.mp3')" type="button">10</button>
+
+			<button onclick="playAudio('dark.mp3')" type="button">11</button>
+
+			<button onclick="playAudio('destiny.mp3')" type="button">12</button>
+
+			<button onclick="playAudio('theatricality.mp3')" type="button">13</button>
+
+			<button onclick="playAudio('victory.mp3')" type="button">14</button>
+
+			<button onclick="playAudio('mr.mp3')" type="button">15</button>
+
+			<button onclick="playAudio('permission.mp3')" type="button">16</button>
+
+			<button onclick="playAudio('punishment.mp3')" type="button">17</button>
+
+			<button onclick="playAudio('plane.mp3')" type="button">18</button>
+
+			<button onclick="playAudio('evil.mp3')" type="button">19</button>
+
+			<button onclick="playAudio('gotham.mp3')" type="button">20</button>
+
+			<button onclick="playAudio('charge.mp3')" type="button">21</button>
+
+			<button onclick="playAudio('devil.mp3')" type="button">22</button>
+
+			<button onclick="playAudio('bomb.mp3')" type="button">23</button>
+
+			<button onclick="playAudio('takeControl.mp3')" type="button">24</button>
+
+		</div>
+
+		<script>
+			
+			var audio = document.getElementById("bane");
+
+			var audios = ['plan.mp3', 'whySomeone.mp3', 'mask.mp3', 'painful.mp3', 'ofCourse.mp3', 'forYou.mp3', 'lovelyVoice.mp3', 'fireRises.mp3', 'calm.mp3', 'shadows.mp3', 'dark.mp3', 'destiny.mp3', 'theatricality.mp3', 'victory.mp3', 'mr.mp3', 'permission.mp3', 'punishment.mp3', 'plane.mp3', 'evil.mp3','gotham.mp3', 'charge.mp3', 'devil.mp3', 'bomb.mp3', 'takeControl.mp3']
+			
+			function playAudio(audioSource) {
+				audio.src = "audios/" + audioSource; 
+				audio.play();
+			}
+
+			function playRandomAudio() {
+				// Obtengo numero aleatorio
+				var randomNumber = Math.floor(Math.random() * audios.length); 
+				//Accedo a un elemento de la lista de audios
+				var audioSource = audios[randomNumber];
+				playAudio(audioSource);
+			}
+
+		</script>
+
+	</body>
+
+</html>
